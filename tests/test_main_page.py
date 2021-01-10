@@ -1,4 +1,5 @@
 from selenium import webdriver
+import config
 import time
 # time для задержек времени, можно потом убрать их все
 
@@ -7,19 +8,20 @@ from pages.main_page import MainPage
 
 ''' для каждой страницы пишем тесты, используя объекты и методы предварительно описанные в файле страницы '''
 
-def test_main_page(web_browser):
+def test_click_gif(web_browser):
     """ Проверим переход по лого-гифке в хедере. """
     page = MainPage(web_browser)
     page.logo_gif.click()
     # проверим, произошел ли переход с главной страницы
-    assert page.get_relative_link() == '/', "no link"
+    assert page.get_domain() == config.ali_domain, "error clicking gif in header"
 
     time.sleep(5)
     web_browser.back()
     # возвращаемся на предыдущую страницу
-    time.sleep(5)
 
-def test_main_page1(web_browser):
+def test_click_logo_ali(web_browser):
     """ Проверим переход по лого алиэкспресса в верхней панели страницы """
     page = MainPage(web_browser)
     page.logo_ali.click()
+    # проверим, произошел ли переход с главной страницы
+    assert page.get_domain() == config.ali_domain, "error clicking gif in header"
