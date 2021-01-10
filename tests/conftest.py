@@ -4,6 +4,9 @@
 # This is example shows how we can manage failed tests
 # and make screenshots after any failed test case.
 
+# не уверена, что понимаю, что и зачем здесь:
+# в этом файле фикстуры с параметрами для браузера и чтобы сделать скриншоты в случае если тест провален
+
 import pytest
 import uuid
 
@@ -18,7 +21,7 @@ def pytest_runtest_makereport(item, call):
     setattr(item, "rep_" + rep.when, rep)
     return rep
 
-
+# параметры для Хрома, я их нигде не использую пока
 @pytest.fixture
 def chrome_options(chrome_options):
     # chrome_options.binary_location = '/usr/bin/google-chrome-stable'
@@ -28,6 +31,7 @@ def chrome_options(chrome_options):
 
     return chrome_options
 
+# параметры для Хрома
 @pytest.fixture
 def web_browser(request, selenium):
 
