@@ -30,3 +30,5 @@ class BasePage(object):
     # def wait_page_loaded(self, timeout=60, check_js_comlete=True,
     #                      check_page_changes=False, check_images=False,
     #                      wait_for_element=None, wait_for_xpath_to_disappear='', sleep_time=2):
+
+
