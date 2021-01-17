@@ -16,7 +16,7 @@ class MainPage(BasePage):
         url = os.getenv("MAIN_URL") or "https://tmall.ru/"
         driver.get(url)
 
-        #создаем нужные элементы
+        #создаем нужные элементы страницы
         #лого алиэкспресс в верхней панели
         self.logo_gif = driver.find_element(*Locators.LOGO_GIF)
         #лого-гифка справа от лого т-молла
